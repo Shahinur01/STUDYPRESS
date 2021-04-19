@@ -21,7 +21,7 @@ const CourseByUser = () => {
   //       setCourseByUser(data);
   //     });
   // }, []);
-
+//
   return (
     <section className="container">
       <Fade>
