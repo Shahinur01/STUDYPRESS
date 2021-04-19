@@ -24,7 +24,7 @@ const AddCourse = () => {
       weight: data.Weight,
       imageURL: imageURL,
     };
-    
+    console.log(productData);
     const url = `http://localhost:8000/addCourse`;
     fetch(url, {
       method: "POST",

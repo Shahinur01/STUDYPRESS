@@ -12,15 +12,15 @@ const UserReview = () => {
     data.Name = loggedInUser.name;
     data.image = loggedInUser.image;
 
-    fetch("http://localhost:8000/addReview", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    })
-      .then((res) => res.json())
-      .then((success) => {
-        alert("Thanks for the review");
-      });
+    // fetch("http://localhost:8000/addReview", {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/json" },
+    //   body: JSON.stringify(data),
+    // })
+    //   .then((res) => res.json())
+    //   .then((success) => {
+    //     alert("Thanks for the review");
+    //   });
 
     console.log(data);
   };

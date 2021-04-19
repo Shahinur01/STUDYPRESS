@@ -11,11 +11,7 @@ const Courses = ({ date }) => {
   const [courseData, setCourseData] = useState([]);
 console.log(date);
   useEffect(() => {
-    fetch("http://http://localhost:8000/courses",{
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(date)
-    })
+    fetch("http://localhost:8000/courses")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

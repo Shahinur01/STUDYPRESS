@@ -40,6 +40,11 @@ const CourseForm = ({
     data.courseStatus = courseStatus;
 
     console.log(data);
+    // const productInfo = (data) => {
+    //   const productData = {
+    //     name: data.Name,
+       
+    //   };
     fetch("http://localhost:8000/addCourseCart", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -80,7 +85,7 @@ const CourseForm = ({
             <div className="form-group">
               <h6 className="text">
                 Fill up your Information to access this course on{" "}
-                {date.toDateString()}
+                {date}
               </h6>
               <br />
               <input
