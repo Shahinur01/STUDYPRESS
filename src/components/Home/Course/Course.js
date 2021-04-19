@@ -22,7 +22,7 @@ const Course = () => {
         <Link className="navbar-brand mx-5" to="/">
           <h2>
             {" "}
-            <span className="text-primary">Studypress</span>
+            <span className="text-primary">Studypress </span>
           </h2>
         </Link>
         <h3 className="mx-4"> {loggedInUser.name} </h3>
