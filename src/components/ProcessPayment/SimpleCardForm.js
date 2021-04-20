@@ -14,9 +14,6 @@ const SimpleCardForm = () => {
       return;
     }
 
-    // Get a reference to a mounted CardElement. Elements knows how
-    // to find your CardElement because there can only ever be one of
-    // each type of element.
     const cardElement = elements.getElement(CardElement);
 
     // Use your card Element with other Stripe.js APIs

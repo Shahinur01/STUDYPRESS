@@ -9,7 +9,7 @@ const ManageCourse = () => {
   const [course, setCourse] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:8000/courses")
+    fetch("https://obscure-escarpment-54463.herokuapp.com/courses")
       .then((res) => res.json())
       .then((data) => {
         setCourses(data);
@@ -17,7 +17,7 @@ const ManageCourse = () => {
   }, [courses]);
 
   const deleteCourse = (id) => {
-    fetch(`http://localhost:8000/delete/${id}`, {
+    fetch(`https://obscure-escarpment-54463.herokuapp.com/delete/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

@@ -45,7 +45,7 @@ const CourseForm = ({
     //     name: data.Name,
        
     //   };
-    fetch("http://localhost:8000/addCourseCart", {
+    fetch("https://obscure-escarpment-54463.herokuapp.com/addCourseCart", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),

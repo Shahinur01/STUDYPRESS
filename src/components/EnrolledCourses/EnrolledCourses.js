@@ -9,7 +9,7 @@ const EnrolledCourses = () => {
 
   useEffect(() => {
     fetch(
-      "http://localhost:8000/enrolledCourse/?email=" +
+      "https://obscure-escarpment-54463.herokuapp.com/enrolledCourse/?email=" +
         loggedInUser.email,
       {
         method: "GET",
@@ -26,7 +26,7 @@ const EnrolledCourses = () => {
   }, [enrolledCourse]);
 
   const deleteEnrollCourse = (id) => {
-    fetch(`http://localhost:8000/deleteEnrolledCourse/${id}`, {
+    fetch(`https://obscure-escarpment-54463.herokuapp.com/deleteEnrolledCourse/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

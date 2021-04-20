@@ -25,7 +25,7 @@ const AddCourse = () => {
       imageURL: imageURL,
     };
     console.log(productData);
-    const url = `http://localhost:8000/addCourse`;
+    const url = `https://obscure-escarpment-54463.herokuapp.com/addCourse`;
     fetch(url, {
       method: "POST",
       headers: {

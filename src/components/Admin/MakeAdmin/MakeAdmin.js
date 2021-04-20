@@ -21,7 +21,7 @@ const MakeAdmin = () => {
       };
 
       axios
-         .post('http://http://localhost:8000/addAdmin', adminEmail)
+         .post('https://obscure-escarpment-54463.herokuapp.com/addAdmin', adminEmail)
          .then(() => {
             setAlertShow(true);
             setAlertErrShow(false);

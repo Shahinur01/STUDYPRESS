@@ -7,21 +7,22 @@ const CourseByUser = () => {
 
   const [courseByUser, setCourseByUser] = useState([]);
 
-  // useEffect(() => {
-  //   fetch("http://localhost:8000/courseEnrolledByUser", {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify(),
-  //   })
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       console.log(data);
-  //       setCourseByUser(data);
-  //     });
-  // }, []);
-//
+  useEffect(() => {
+    fetch("https://obscure-escarpment-54463.herokuapp.com/courseEnrolledByUser")
+    // , {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify(),
+    // })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setCourseByUser(data);
+      });
+  }, []);
+
   return (
     <section className="container">
       <Fade>

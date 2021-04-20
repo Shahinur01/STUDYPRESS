@@ -11,7 +11,7 @@ const Courses = ({ date }) => {
   const [courseData, setCourseData] = useState([]);
 console.log(date);
   useEffect(() => {
-    fetch("http://localhost:8000/courses")
+    fetch("https://obscure-escarpment-54463.herokuapp.com/courses")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
