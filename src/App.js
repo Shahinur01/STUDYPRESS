@@ -11,6 +11,8 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import UserReview from "./components/UserReview/UserReview";
 import AdminDashboard from "./components/Admin/AdminDashboard/AdminDashboard";
 import AddCourse from "./components/Admin/AddCourse/AddCourse";
+import MakeAdmin from "./components/Admin/MakeAdmin/MakeAdmin.js";
+
 import ManageCourse from "./components/Admin/ManageCourse/ManageCourse";
 import PrivateRoute from "./components/Login/PrivateRoute/PrivateRoute";
 export const UserContext = createContext();
@@ -55,9 +57,12 @@ function App() {
               <Route path="/contactUs">
                 <Contact> </Contact>
               </Route>
-              <Route path="/">
+              <Route exact path="/">
                 <Home> </Home>
               </Route>
+              <PrivateRoute path="/MakeAdmin">
+                <MakeAdmin/>
+              </PrivateRoute>
             </Switch>
           </Router>
         </div>

@@ -12,12 +12,11 @@ const UserReview = () => {
     data.Name = loggedInUser.name;
     data.image = loggedInUser.image;
 
-    fetch("https://obscure-escarpment-54463.herokuapp.com/addReview")
-    // , {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/json" },
-    //   body: JSON.stringify(data),
-    // })
+    fetch("https://obscure-escarpment-54463.herokuapp.com/addReviews",{
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    })
       .then((res) => res.json())
       .then((success) => {
         alert("Thanks for the review");
@@ -39,6 +38,7 @@ const UserReview = () => {
       <div className="row">
         <div className="col-md-2 mt-5">
           <Sidebar> </Sidebar>
+          
         </div>
         <div className="col-md-4 shadow mt-5">
           <div className="form-group">

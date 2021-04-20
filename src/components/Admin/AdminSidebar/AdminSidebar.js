@@ -34,7 +34,7 @@ const AdminSidebar = () => {
             <FontAwesomeIcon icon={faTasks} /> <span> Manage Courses</span>{" "}
           </p>{" "}
         </Link>
-        <Link style={{ textDecoration: "none" }} to="/MakeAdmin">
+        <Link style={{ textDecoration: "none" }} to="/makeAdmin">
           {" "}
           <p>
             {" "}
