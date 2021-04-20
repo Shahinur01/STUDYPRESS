@@ -57,7 +57,7 @@ function App() {
               <Route path="/contactUs">
                 <Contact> </Contact>
               </Route>
-              <Route exact path="/">
+              <Route  path="/">
                 <Home> </Home>
               </Route>
               <PrivateRoute path="/MakeAdmin">
