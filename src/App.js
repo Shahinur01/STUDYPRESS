@@ -11,10 +11,12 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import UserReview from "./components/UserReview/UserReview";
 import AdminDashboard from "./components/Admin/AdminDashboard/AdminDashboard";
 import AddCourse from "./components/Admin/AddCourse/AddCourse";
-import MakeAdmin from "./components/Admin/MakeAdmin/MakeAdmin.js";
-
 import ManageCourse from "./components/Admin/ManageCourse/ManageCourse";
 import PrivateRoute from "./components/Login/PrivateRoute/PrivateRoute";
+import CourseByUser from "./components/Admin/CourseByUser/CourseByUser";
+import EnrolledCourses from "./components/EnrolledCourses/EnrolledCourses";
+import MakeAdmin from "./components/Admin/MakeAdmin/MakeAdmin";
+
 export const UserContext = createContext();
 
 function App() {
@@ -34,10 +36,18 @@ function App() {
               </PrivateRoute>
               <PrivateRoute path="/adminDashboard">
                 <AdminDashboard> </AdminDashboard>
-              </PrivateRoute>
-
+              </PrivateRoute>  
               <PrivateRoute path="/addCourse">
                 <AddCourse> </AddCourse>
+              </PrivateRoute>
+              <PrivateRoute path="/orderList">
+                <CourseByUser>  </CourseByUser>
+              </PrivateRoute>
+              <PrivateRoute path="/enrolledCourse">
+              <EnrolledCourses> </EnrolledCourses>
+              </PrivateRoute>
+              <PrivateRoute path="/makeAdmin">
+              <MakeAdmin>  </MakeAdmin>
               </PrivateRoute>
               <PrivateRoute path="/manageCourse">
                 <ManageCourse> </ManageCourse>
@@ -57,12 +67,9 @@ function App() {
               <Route path="/contactUs">
                 <Contact> </Contact>
               </Route>
-              <Route  path="/">
+              <Route path="/">
                 <Home> </Home>
               </Route>
-              <PrivateRoute path="/MakeAdmin">
-                <MakeAdmin/>
-              </PrivateRoute>
             </Switch>
           </Router>
         </div>

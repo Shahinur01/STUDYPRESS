@@ -1,49 +1,67 @@
-import axios from "axios";
-import React, { useState } from "react";
-import { Button, Col, Container, Form, InputGroup, Row } from "react-bootstrap";
-import AdminSidebar from "../../Admin/AdminSidebar/AdminSidebar";
+import React from "react";
+import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
+import AdminSidebar from "../AdminSidebar/AdminSidebar";
 
 const MakeAdmin = () => {
-  const [alertShow, setAlertShow] = useState(false);
-  const [alertErrShow, setAlertErrShow] = useState(false);
-const [emailChange,setEmailChange] = useState("");
-
-  const handleSubmit = (e) => {
-   e.preventDefault();
-    console.log(emailChange);
-    axios
-      .post("https://obscure-escarpment-54463.herokuapp.com/addAdmin",{email: emailChange})
-      .then(() => {
-        setAlertShow(true);
-        setAlertErrShow(false);
-      })
-      .catch(() => {
-        setAlertErrShow(true);
-        setAlertShow(false);
+  const { register, handleSubmit, errors } = useForm();
+  const onSubmit = (data) => {
+    fetch("https://obscure-escarpment-54463.herokuapp.com/addAdmin", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((success) => {
+        alert("Admin Successfully Added");
       });
+
+    console.log(data);
   };
 
   return (
-    <Container className="dashboard">
-      <Row>
-        <Col md={3}>
-          <AdminSidebar />
-        </Col>
-        <Col md={9}>
-          
-          <Form onSubmit={handleSubmit}>
-            <Form.Group controlId="formBasicEmail">
-              <Form.Label>Email address</Form.Label>
-              <Form.Control onChange={(e)=>setEmailChange(e.target.value)} type="text" placeholder="Enter email" />
-            </Form.Group>
-
-            <Button variant="primary" type="submit">
-              Submit
-            </Button>
-          </Form>
-        </Col>
-      </Row>
-    </Container>
+    <section className="container">
+      <div className="row">
+        <nav class="navbar navbar bg-light">
+          <Link className="navbar-brand mx-5 " to="/">
+            <h2>
+              {" "}
+              <span className="text-primary">Studypress</span>
+            </h2>
+          </Link>
+        </nav>
+        <div className="col-md-2 mt-5">
+          <AdminSidebar> </AdminSidebar>
+        </div>
+        <div className="col-md-4 mx-4 mt-5">
+          <div className="form-group">
+            <form className="p-4" onSubmit={handleSubmit(onSubmit)}>
+              <input
+                type="text"
+                ref={register({ required: true })}
+                name="email"
+                placeholder="example@xyz.com"
+                className="form-control"
+              />
+              {errors.name && (
+                <span className="text-danger">This field is required</span>
+              )}
+              <div className="form-group">
+                <br />
+                <button type="submit" className="btn btn-outline-primary col-4">
+                  Send
+                </button>
+              </div>
+            </form>
+            <Link to="/" className="btn btn-outline-primary">
+              {" "}
+              Back To home{" "}
+            </Link>
+            <br />
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };
 
