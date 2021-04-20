@@ -1,20 +1,13 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { Button, Col, Container, Form, InputGroup, Row } from "react-bootstrap";
-// import { useForm } from "react-hook-form";
-// import AlertMessage from '../../';
 import AdminSidebar from "../../Admin/AdminSidebar/AdminSidebar";
 
 const MakeAdmin = () => {
   const [alertShow, setAlertShow] = useState(false);
   const [alertErrShow, setAlertErrShow] = useState(false);
 const [emailChange,setEmailChange] = useState("");
-//   const {
-//     register,
-//     handleSubmit,
-//     formState: { errors },
-//   } = useForm();
-// console.log(errors);
+
   const handleSubmit = (e) => {
    e.preventDefault();
     console.log(emailChange);
